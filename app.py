@@ -8,6 +8,8 @@ from controllers.AdminController import AdminResource
 from controllers.UserDataController import UserDataResource
 from controllers.AdminHistory import AdminHistory
 from models.Db import db
+import pymysql
+pymysql.install_as_MySQLdb()
 
 app = Flask(__name__, template_folder="templates")
 

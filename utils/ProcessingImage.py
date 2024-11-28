@@ -1,15 +1,13 @@
-from keras.preprocessing.image import img_to_array #type:ignore
-from keras.models import load_model #type:ignore
+from keras.preprocessing.image import img_to_array #type: ignore
+from keras.models import load_model #type: ignore
 from tf_keras_vis.gradcam import Gradcam
-from tf_keras_vis.saliency import Saliency
 from tf_keras_vis.utils.scores import CategoricalScore
-from tf_keras_vis.utils import normalize
 from matplotlib import cm
 import os
 from PIL import Image
 import numpy as np
 
-model = load_model('utils/model.h5', compile=False)
+model = load_model('utils/model.h5', compile=False, custom_objects={})
 save_dir='static/img/result_img'
 labels = [1, 2, 3]
 
