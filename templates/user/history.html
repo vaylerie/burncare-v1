@@ -68,7 +68,7 @@
                     <li>
                         <a href="#"
                             class="block py-2 px-3 text-red-900 bg-gray-200 md:bg-transparent md:text-gray-700 md:p-0"
-                            aria-current="page">Berand</a>
+                            aria-current="page">Beranda</a>
                     </li>
                     <li>
                         <a href="/riwayat"
@@ -89,9 +89,9 @@
                 <tr>
                     <th scope="col" class="px-6 py-3">Waktu Upload</th>
                     <th scope="col" class="px-6 py-3">Gambar</th>
+                    <th scope="col" class="px-6 py-3">Hasil</th>
                     <th scope="col" class="px-6 py-3">Derajat Klasifikasi</th>
                     <th scope="col" class="px-6 py-3">Confidence Score</th>
-                    <th scope="col" class="px-6 py-3">Deskripsi</th>
                 </tr>
             </thead>
             <tbody id="historyData">
@@ -142,8 +142,13 @@
     <script>
         // display users history
         document.addEventListener('DOMContentLoaded', async () => {
+            let token = localStorage.getItem('token'); // Contoh mengambil dari localStorage
+            if (!token) {
+                console.error('Token is undefined!');
+                // Redirect ke halaman login atau tampilkan pesan kesalahan
+            }
             console.log('Token:', token);
-            const apiUrl = '/api/auth/history';
+            const apiUrl = '/api/history';
             const tableBody = document.getElementById('history-table').querySelector('tbody');
 
             try {
@@ -157,6 +162,7 @@
 
                 if (response.ok) {
                     const data = await response.json();
+                    console.log(data);
                     const historyData = data.data;
 
                     if (historyData.length === 0) {
@@ -169,9 +175,9 @@
                         row.innerHTML = `
                     <td>${record.waktu_upload}</td>
                     <td>${record.file_path}</td>
+                    <td>${record.result_path}</td>
                     <td>${record.derajat_klasifikasi}</td>
                     <td>${record.confidence_score}</td>
-                    <td>${record.deskripsi}</td>
                 `;
                         tableBody.appendChild(row);
                     });
@@ -185,6 +191,7 @@
         });
 
     </script>
+    <script src="static/src/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>

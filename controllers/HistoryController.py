@@ -32,7 +32,8 @@ class HistoryResource(Resource):
                     "file_path": upload_identifikasi.file_path,
                     "derajat_klasifikasi": hasil_upload.derajat_klasifikasi,
                     "confidence_score": hasil_upload.confidence_score,
-                    "deskripsi": hasil_upload.deskripsi
+                    "deskripsi": hasil_upload.deskripsi,
+                    "result_path": hasil_upload.result_path
                 })
 
         return ({"data": history_data}), 200
