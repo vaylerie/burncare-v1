@@ -7,7 +7,7 @@ from models.Db import db
 from models.RiwayatIdentifkasi import RiwayatIdentifikasi
 import os
 import logging
-from utils.ProcessingImage import process
+from utils.ProcessingImage import process, resize
 
 app = Flask(__name__)
 
@@ -29,7 +29,8 @@ class ClassifyResource(Resource):
 
         try:
             file_path = os.path.join('static/img/predict_img/', file.filename)
-            file.save(file_path)
+            image = resize(file)
+            image.save(file_path)
 
             upload_record = UploadIdentifikasi(file_path=file_path,
                                                user_id=user_id)

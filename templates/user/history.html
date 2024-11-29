@@ -66,7 +66,7 @@
                 <ul
                     class="flex flex-col font-medium md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-200 md:dark:bg-gray-200 dark:border-gray-700">
                     <li>
-                        <a href="#"
+                        <a href="/user"
                             class="block py-2 px-3 text-red-900 bg-gray-200 md:bg-transparent md:text-gray-700 md:p-0"
                             aria-current="page">Beranda</a>
                     </li>
@@ -83,21 +83,23 @@
         </div>
     </nav>
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="relative overflow-x-auto sm:rounded-lg">
+        <div href="#" class="inline-flex items-center py-8 px-1"></div>
         <table id="history-table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th scope="col" class="px-6 py-3">Waktu Upload</th>
-                    <th scope="col" class="px-6 py-3">Gambar</th>
-                    <th scope="col" class="px-6 py-3">Hasil</th>
-                    <th scope="col" class="px-6 py-3">Derajat Klasifikasi</th>
-                    <th scope="col" class="px-6 py-3">Confidence Score</th>
+                    <th scope="col" class="px-6 py-3 text-center">Waktu Upload</th>
+                    <th scope="col" class="px-6 py-3 text-center">Gambar</th>
+                    <th scope="col" class="px-6 py-3 text-center">Hasil</th>
+                    <th scope="col" class="px-6 py-3 text-center">Derajat Klasifikasi</th>
+                    <th scope="col" class="px-6 py-3 text-center">Confidence Score</th>
                 </tr>
             </thead>
             <tbody id="historyData">
                 <!-- Data akan dimuat di sini -->
             </tbody>
         </table>
+        <div href="#" class="inline-flex items-center py-8 px-1"></div>
     </div>
 
 
@@ -169,15 +171,15 @@
                         tableBody.innerHTML = '<tr><td colspan="5">No history found</td></tr>';
                         return;
                     }
-
+                    
                     historyData.forEach(record => {
                         const row = document.createElement('tr');
                         row.innerHTML = `
-                    <td>${record.waktu_upload}</td>
-                    <td>${record.file_path}</td>
-                    <td>${record.result_path}</td>
-                    <td>${record.derajat_klasifikasi}</td>
-                    <td>${record.confidence_score}</td>
+                    <td class="py-2 px-2 text-center">${record.waktu_upload}</td>
+                    <td class="py-2 px-4"> <img src="${record.file_path}" alt="Image" style="max-width:100%; height:auto;"></td>
+                    <td class="py-2 px-4"> <img src="${record.result_path}" alt="Image" style="max-width:100%; height:auto;"></td>
+                    <td class="py-2 text-center">${record.derajat_klasifikasi}</td>
+                    <td class="py-2 text-center">${record.confidence_score}</td>
                 `;
                         tableBody.appendChild(row);
                     });

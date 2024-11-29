@@ -11,6 +11,11 @@ model = load_model('utils/model.h5', compile=False, custom_objects={})
 save_dir='static/img/result_img'
 labels = [1, 2, 3]
 
+def resize(file):
+    img = Image.open(file)
+    img = img.resize((224, 224))
+    return img
+
 def process(file_path, target_size=(224, 224)):
     # Preprocess Image
     if isinstance(file_path, Image.Image):  # Jika input adalah objek PIL.Image.Image
