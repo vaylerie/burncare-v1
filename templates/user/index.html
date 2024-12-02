@@ -35,9 +35,9 @@
                     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                         id="user-dropdown">
                         <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 dark:text-white" id="currentUsername"></span>
+                            <span class="block text-sm font-bold dark:text-white" id="current-username"></span>
                             <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"
-                                id="currentName"></span>
+                                id="current-name"></span>
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
                             <li>
@@ -315,49 +315,6 @@
         </div>
     </footer>
 
-    <script>
-        // Upload Form
-        document.getElementById('uploadForm').addEventListener('submit', async function (event) {
-            console.log('Form submitted');
-            event.preventDefault(); // Prevent default form submission
-            let token = localStorage.getItem('token');
-
-            const imageInput = document.getElementById('image');
-            const file = imageInput.files[0]; // Access the uploaded file
-
-            if (!file) {
-                alert('Please select a file before uploading.');
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('image', file); // Append the file to the FormData object
-
-            try {
-                const response = await fetch('/api/upload', {
-                    method: 'POST',
-                    headers: {
-                        'X-API-TOKEN': token // Custom header for authentication
-                    },
-                    body: formData // Send FormData
-                });
-
-                const data = await response.json();
-                if (response.ok) {
-                    // Handle successful upload
-                    console.log('Upload successful:', data);
-                    window.location.href = '/hasil'; // Redirect on success
-                } else {
-                    // Handle server errors
-                    console.error('Upload failed:', data.message);
-                    alert(data.message);
-                }
-            } catch (error) {
-                console.error('Error during upload:', error);
-                alert('An error occurred. Please try again.');
-            }
-        });
-    </script>
     <script src="/static/src/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

@@ -35,9 +35,9 @@
                     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                         id="user-dropdown">
                         <div class="px-4 py-3">
-                            <span class="block text-sm text-gray-900 dark:text-white" id="currentUsername"></span>
+                            <span class="block text-sm font-bold dark:text-white" id="current-username"></span>
                             <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"
-                                id="currentName"></span>
+                                id="current-name"></span>
                         </div>
                         <ul class="py-2" aria-labelledby="user-menu-button">
                             <li>
@@ -142,43 +142,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            let token = localStorage.getItem('token');
-            if (!token) {
-                console.error('Token is undefined!');
-            }
-            
-            try {
-                const response = await fetch('/api/history', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-API-TOKEN': token
-                    }
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    const historyData = data.data;
-                    const lastRecord = historyData[historyData.length -1];
-
-                    const classificationElement = document.querySelector('#classification');
-                    classificationElement.textContent = lastRecord.derajat_klasifikasi;
-                    const imageElement = document.querySelector('#uploaded-image');
-                    imageElement.src = lastRecord.file_path;
-                    const resultElement = document.querySelector('#result-image');
-                    resultElement.src = lastRecord.result_path;
-                    const confidenceScore = document.querySelector('#confidence-score');
-                    confidenceScore.textContent = lastRecord.confidence_score;
-                    const deskripsiElement = document.querySelector('#deskripsi');
-                    deskripsiElement.textContent = lastRecord.deskripsi;
-                }
-            } catch (error) {
-                console.error('Error: ', error);
-            }
-        });
-    </script>
     <script src="/static/src/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
