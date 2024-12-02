@@ -20,26 +20,35 @@
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <button type="button" class="flex text-sm bg-transparent rounded-full md:me-0" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                      <span class="sr-only">Pengguna</span>
-                      <svg class="w-[32px] h-[32px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
-                      </svg>                                    
+                    <button type="button" class="flex text-sm bg-transparent rounded-full md:me-0" id="user-menu-button"
+                        aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                        <span class="sr-only">Pengguna</span>
+                        <svg class="w-[32px] h-[32px] text-gray-800 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"
+                                clip-rule="evenodd" />
+                        </svg>
                     </button>
                     <!-- Dropdown menu -->
-                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-                      <div class="px-4 py-3">
-                        <span class="block text-sm text-gray-900 dark:text-white" id="currentUsername"></span>
-                        <span class="block text-sm  text-gray-500 truncate dark:text-gray-400" id="currentName"></span>
-                      </div>
-                      <ul class="py-2" aria-labelledby="user-menu-button">
-                        <li>
-                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profil</a>
-                        </li>
-                        <li>
-                          <a href="#" onclick="logout()" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Keluar</a>
-                        </li>
-                      </ul>
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                        id="user-dropdown">
+                        <div class="px-4 py-3">
+                            <span class="block text-sm text-gray-900 dark:text-white" id="currentUsername"></span>
+                            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"
+                                id="currentName"></span>
+                        </div>
+                        <ul class="py-2" aria-labelledby="user-menu-button">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profil</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="logout()"
+                                    class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Keluar</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <button data-collapse-toggle="navbar-sticky" type="button"
@@ -78,8 +87,7 @@
     <section
         class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
-            <div href="#"
-                class="inline-flex items-center py-8 px-1">
+            <div href="#" class="inline-flex items-center py-8 px-1">
             </div>
             <h1 data-aos="fade-up" data-aos-duration="1000"
                 class="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
@@ -94,22 +102,28 @@
                 dengan mengunggah foto luka bakar. Pastikan foto diambil dengan pencahayaan yang baik untuk hasil yang
                 lebih akurat.</p>
             <p data-aos="fade-up" data-aos-duration="1400"
-                class="mb-8 text-lg font-normal text-gray-600 lg:text-sm sm:px-16 lg:px-48dark:text-gray-200">Dalam hitungan detik, Anda akan menerima informasi termasuk kategori (derajat 1, 2, atau 3) dan rekomendasi perawatan yang sesuai.</p>
-                <form class="w-full max-w-md mx-auto">
-                    <div data-aos="fade-up" data-aos-duration="1600" class="relative">
-                        <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-white" for="file_input">Unggah gambar di sini</label>
-                        
-                        <div class="flex items-center">
-                            <input
-                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="file_input_help" id="file_input" type="file">
-                            <button type="submit" class="bg-transparent border border-gray-900 hover:bg-gray-900 font-medium rounded-lg text-sm px-4 py-2 text-gray-900 hover:text-white ml-2">
-                                Unggah
-                            </button>
-                        </div>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG, atau JPEG. Maks 5MB.</p>
-                    </div>
-                </form>
+                class="mb-8 text-lg font-normal text-gray-600 lg:text-sm sm:px-16 lg:px-48dark:text-gray-200">Dalam
+                hitungan detik, Anda akan menerima informasi termasuk kategori (derajat 1, 2, atau 3) dan rekomendasi
+                perawatan yang sesuai.</p>
+            <div class="w-full max-w-md mx-auto">
+                <div data-aos="fade-up" data-aos-duration="1600" class="relative">
+                    <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-white" for="image">Unggah
+                        gambar di sini</label>
+
+                    <form id="uploadForm" class="flex items-center">
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="file_input_help" id="image" type="file" name="image" accept="image/*"
+                            required>
+                        <button type="submit"
+                            class="bg-transparent border border-gray-900 hover:bg-gray-900 font-medium rounded-lg text-sm px-4 py-2 text-gray-900 hover:text-white ml-2">
+                            Unggah
+                        </button>
+                    </form>
+                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG, atau JPEG.
+                        Maks 5MB.</p>
+                </div>
+            </div>
         </div>
         <div
             class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0">
@@ -119,16 +133,19 @@
 
     <section id="tentang">
         <div class="container mt-10 mb-8 p-6">
-            <h2 data-aos="fade-up" data-aos-duration="700" class="text-2xl font-bold text-center mb-6">Kenali 3 Tingkat Keparahan pada Luka Bakar</h2>
-            <div  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 data-aos="fade-up" data-aos-duration="700" class="text-2xl font-bold text-center mb-6">Kenali 3 Tingkat
+                Keparahan pada Luka Bakar</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
                 <div data-aos="fade-up" data-aos-duration="800" class="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src="/static/img/degree/1.jpg" alt="Service 1" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-lg font-semibold">Derajat 1</h3>
-                        <p class="text-gray-600">Luka Bakar Derajat Pertama (Superficial) adalah cedera yang hanya mengenai lapisan...</p>
+                        <p class="text-gray-600">Luka Bakar Derajat Pertama (Superficial) adalah cedera yang hanya
+                            mengenai lapisan...</p>
                         <button data-modal-toggle="modal-service-1"
-                            class="mt-4 w-auto py-2 px-4 text-white bg-blue-600 rounded-md hover:bg-blue-700">Lebih lanjut</button>
+                            class="mt-4 w-auto py-2 px-4 text-white bg-blue-600 rounded-md hover:bg-blue-700">Lebih
+                            lanjut</button>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -136,9 +153,11 @@
                     <img src="/static/img/degree/2.jpg" alt="Service 2" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-lg font-semibold">Derajat 2</h3>
-                        <p class="text-gray-600">Luka Bakar Derajat Kedua (Partial Thickness) merupakan cedera yang lebih serius yang...</p>
+                        <p class="text-gray-600">Luka Bakar Derajat Kedua (Partial Thickness) merupakan cedera yang
+                            lebih serius yang...</p>
                         <button data-modal-toggle="modal-service-2"
-                            class="mt-4 w-auto py-2 px-4 text-white bg-blue-600 rounded-md hover:bg-blue-700">Lebih lanjut</button>
+                            class="mt-4 w-auto py-2 px-4 text-white bg-blue-600 rounded-md hover:bg-blue-700">Lebih
+                            lanjut</button>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -146,9 +165,11 @@
                     <img src="/static/img/degree/3.jpg" alt="Service 3" class="w-full h-48 object-cover">
                     <div class="p-4">
                         <h3 class="text-lg font-semibold">Derajat 3</h3>
-                        <p class="text-gray-600">Luka Bakar Derajat Tiga (Full Thickness) adalah jenis cedera paling serius yang merusak seluruh...</p>
+                        <p class="text-gray-600">Luka Bakar Derajat Tiga (Full Thickness) adalah jenis cedera paling
+                            serius yang merusak seluruh...</p>
                         <button data-modal-toggle="modal-service-3"
-                            class="mt-4 w-auto py-2 px-4 text-white bg-blue-600 rounded-md hover:bg-blue-700">Lebih lanjut</button>
+                            class="mt-4 w-auto py-2 px-4 text-white bg-blue-600 rounded-md hover:bg-blue-700">Lebih
+                            lanjut</button>
                     </div>
                 </div>
             </div>
@@ -173,7 +194,13 @@
                             </button>
                         </div>
                         <div class="p-6">
-                            <p>Luka Bakar Derajat Pertama (Superficial) adalah cedera yang hanya mengenai lapisan epidermis, yaitu lapisan kulit paling luar. Karakteristiknya meliputi kemerahan, nyeri ringan, dan sedikit bengkak. Biasanya disebabkan oleh sengatan matahari atau kontak singkat dengan benda panas.Proses penyembuhan berlangsung dalam waktu 3-7 hari tanpa meninggalkan bekas luka. Penanganannya dilakukan dengan pendinginan menggunakan air bersih mengalir bersuhu 10-20 derajat Celsius dan dapat diberikan obat pereda nyeri seperti ibuprofen atau paracetamol untuk meredakan rasa sakit.</p>
+                            <p>Luka Bakar Derajat Pertama (Superficial) adalah cedera yang hanya mengenai lapisan
+                                epidermis, yaitu lapisan kulit paling luar. Karakteristiknya meliputi kemerahan, nyeri
+                                ringan, dan sedikit bengkak. Biasanya disebabkan oleh sengatan matahari atau kontak
+                                singkat dengan benda panas.Proses penyembuhan berlangsung dalam waktu 3-7 hari tanpa
+                                meninggalkan bekas luka. Penanganannya dilakukan dengan pendinginan menggunakan air
+                                bersih mengalir bersuhu 10-20 derajat Celsius dan dapat diberikan obat pereda nyeri
+                                seperti ibuprofen atau paracetamol untuk meredakan rasa sakit.</p>
                         </div>
                     </div>
                 </div>
@@ -198,7 +225,15 @@
                             </button>
                         </div>
                         <div class="p-6">
-                            <p>Luka Bakar Derajat Kedua (Partial Thickness) merupakan cedera yang lebih serius yang merusak lapisan epidermis dan sebagian lapisan dermis. Pada derajat ini, muncul lepuhan berisi cairan bening atau kekuningan dengan nyeri yang cukup intens. Kulit di sekitar area luka akan tampak merah, meradang, dan membengkak. Penanganannya membutuhkan perhatian medis lebih intensif. Awalnya dilakukan pendinginan dengan air dingin, kemudian pembersihan menggunakan larutan antiseptik. Luka ditutup dengan perban steril dan diberikan antibiotik topikal atau oral untuk mencegah infeksi. Pada kasus dengan area luka yang luas, mungkin diperlukan terapi cairan intravena dan bahkan prosedur cangkok kulit untuk mempercepat proses penyembuhan.</p>
+                            <p>Luka Bakar Derajat Kedua (Partial Thickness) merupakan cedera yang lebih serius yang
+                                merusak lapisan epidermis dan sebagian lapisan dermis. Pada derajat ini, muncul lepuhan
+                                berisi cairan bening atau kekuningan dengan nyeri yang cukup intens. Kulit di sekitar
+                                area luka akan tampak merah, meradang, dan membengkak. Penanganannya membutuhkan
+                                perhatian medis lebih intensif. Awalnya dilakukan pendinginan dengan air dingin,
+                                kemudian pembersihan menggunakan larutan antiseptik. Luka ditutup dengan perban steril
+                                dan diberikan antibiotik topikal atau oral untuk mencegah infeksi. Pada kasus dengan
+                                area luka yang luas, mungkin diperlukan terapi cairan intravena dan bahkan prosedur
+                                cangkok kulit untuk mempercepat proses penyembuhan.</p>
                         </div>
                     </div>
                 </div>
@@ -223,7 +258,17 @@
                             </button>
                         </div>
                         <div class="p-6">
-                            <p>Luka Bakar Derajat Tiga (Full Thickness) adalah jenis cedera paling serius yang merusak seluruh lapisan kulit hingga mencapai jaringan lemak di bawahnya. Area yang terbakar tampak pucat, cokelat tua, atau hitam seperti arang. Ciri khasnya adalah hilangnya fungsi pelindung kulit dan tidak adanya rasa nyeri karena kerusakan saraf sensorik. Jaringan mengalami nekrosis dan akan mengelupas. Penyebab utamanya adalah paparan panas tinggi dalam waktu lama, seperti api terbuka, cairan panas, atau bahan kimia korosif. Penanganannya memerlukan tindakan medis segera dan intensif di rumah sakit. Prosedur meliputi pendinginan area luka, pembersihan dengan cairan steril, debridemen untuk menghilangkan jaringan mati, terapi cairan intravena, dan cangkok kulit. Antibiotik diberikan untuk mencegah infeksi, sementara obat pereda nyeri digunakan untuk mengatasi rasa sakit di area sekitar luka.</p>
+                            <p>Luka Bakar Derajat Tiga (Full Thickness) adalah jenis cedera paling serius yang merusak
+                                seluruh lapisan kulit hingga mencapai jaringan lemak di bawahnya. Area yang terbakar
+                                tampak pucat, cokelat tua, atau hitam seperti arang. Ciri khasnya adalah hilangnya
+                                fungsi pelindung kulit dan tidak adanya rasa nyeri karena kerusakan saraf sensorik.
+                                Jaringan mengalami nekrosis dan akan mengelupas. Penyebab utamanya adalah paparan panas
+                                tinggi dalam waktu lama, seperti api terbuka, cairan panas, atau bahan kimia korosif.
+                                Penanganannya memerlukan tindakan medis segera dan intensif di rumah sakit. Prosedur
+                                meliputi pendinginan area luka, pembersihan dengan cairan steril, debridemen untuk
+                                menghilangkan jaringan mati, terapi cairan intravena, dan cangkok kulit. Antibiotik
+                                diberikan untuk mencegah infeksi, sementara obat pereda nyeri digunakan untuk mengatasi
+                                rasa sakit di area sekitar luka.</p>
                         </div>
                     </div>
                 </div>
@@ -270,6 +315,49 @@
         </div>
     </footer>
 
+    <script>
+        // Upload Form
+        document.getElementById('uploadForm').addEventListener('submit', async function (event) {
+            console.log('Form submitted');
+            event.preventDefault(); // Prevent default form submission
+            let token = localStorage.getItem('token');
+
+            const imageInput = document.getElementById('image');
+            const file = imageInput.files[0]; // Access the uploaded file
+
+            if (!file) {
+                alert('Please select a file before uploading.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', file); // Append the file to the FormData object
+
+            try {
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    headers: {
+                        'X-API-TOKEN': token // Custom header for authentication
+                    },
+                    body: formData // Send FormData
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    // Handle successful upload
+                    console.log('Upload successful:', data);
+                    window.location.href = '/hasil'; // Redirect on success
+                } else {
+                    // Handle server errors
+                    console.error('Upload failed:', data.message);
+                    alert(data.message);
+                }
+            } catch (error) {
+                console.error('Error during upload:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
     <script src="/static/src/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

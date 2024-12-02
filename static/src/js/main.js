@@ -113,3 +113,4 @@ async function logout() {
         alert('An error occurred while logging out. Please try again');
     }
 };
+

@@ -49,5 +49,9 @@ def history():
 def admin():
     return render_template("admin/index.html")
 
+@app.route("/hasil")
+def hasil():
+     return render_template("user/result.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
