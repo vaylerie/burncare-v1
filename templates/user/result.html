@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurnCare</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav
+        class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href=/ class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-red-700 dark:text-white">Burn<span
+                        class="text-gray-900">Care+</span></span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <button type="button" class="flex text-sm bg-transparent rounded-full md:me-0" id="user-menu-button"
+                        aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                        <span class="sr-only">Pengguna</span>
+                        <svg class="w-[32px] h-[32px] text-gray-800 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                        id="user-dropdown">
+                        <div class="px-4 py-3">
+                            <span class="block text-sm text-gray-900 dark:text-white" id="currentUsername"></span>
+                            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400"
+                                id="currentName"></span>
+                        </div>
+                        <ul class="py-2" aria-labelledby="user-menu-button">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profil</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="logout()"
+                                    class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Keluar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Buka menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col font-medium md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-200 md:dark:bg-gray-200 dark:border-gray-700">
+                    <li>
+                        <a href="/user"
+                            class="block py-2 px-3 text-gray-900 rounded hover:text-red-900 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 dark:hover:text-gray-500 dark:text-white dark:hover:bg-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-white"
+                            aria-current="page">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="/riwayat"
+                            class="block py-2 px-3 text-gray-900 rounded hover:text-red-900 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 dark:hover:text-gray-500 dark:text-white dark:hover:bg-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-white">Riwayat</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('footer').scrollIntoView({ behavior: 'smooth' })"
+                            class="block py-2 px-3 text-gray-900 rounded hover:text-red-900 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 dark:hover:text-gray-500 dark:text-white dark:hover:bg-white dark:hover:text-white md:dark:hover:bg-transparent dark:border-white">Tentang</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+            <div href="#" class="inline-flex items-center py-8 px-1">
+            </div>
+            <h2 class="mb-4 text-2xl font-bold tracking-tight leading-none text-gray-900 dark:text-white">Gambar yang Anda unggah teridentifikasi sebagai luka bakar derajat <span id="classification"></span></h2>
+            <div class="flex flex-wrap justify-center">
+                <div class=" grid grid-cols-2 gap-3">
+                    <img id="uploaded-image" alt="Gambar luka bakar" class="mx-auto mt-4 rounded-lg shadow-md">
+                    <img id="result-image" alt="Gambar luka bakar" class="mx-auto mt-4 rounded-lg shadow-md">
+                </div>
+            </div>
+            <p class="mt-4 text-lg font-normal text-gray-500 lg:text-sm sm:px-16 lg:px-48 dark:text-gray-400">Skor kepercayaan (confidence score): 
+                <span class="font-bold" id="confidence-score"></span>
+            </p>
+            <p class="px-4 mt-4 text-lg font-normal text-gray-900 lg:text-lg sm:px-16 lg:px-48 dark:text-gray-400"><span id="deskripsi"></span>
+            </p>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-gray-800 text-white mt-10">
+        <div class="max-w-screen-xl mx-auto p-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="text-lg font-semibold">Follow Us</h2>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 5.52 0 10-4.48 10-10S17.52 2 12 2zm1.5 17.5h-3v-6h3v6zm0-7.5h-3V8h3v4z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 5.52 0 10-4.48 10-10S17.52 2 12 2zm1.5 17.5h-3v-6h3v6zm0-7.5h-3V8h3v4z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10 5.52 0 10-4.48 10-10S17.52 2 12 2zm1.5 17.5h-3v-6h3v6zm0-7.5h-3V8h3v4z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-lg font-semibold">Contact Us</h2>
+                    <p class="mt-2">Email: info@example.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="mt-6 border-t border-gray-700 pt-4 text-center">
+                <p class="text-sm">© 2023 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            let token = localStorage.getItem('token');
+            if (!token) {
+                console.error('Token is undefined!');
+            }
+            
+            try {
+                const response = await fetch('/api/history', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-TOKEN': token
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const historyData = data.data;
+                    const lastRecord = historyData[historyData.length -1];
+
+                    const classificationElement = document.querySelector('#classification');
+                    classificationElement.textContent = lastRecord.derajat_klasifikasi;
+                    const imageElement = document.querySelector('#uploaded-image');
+                    imageElement.src = lastRecord.file_path;
+                    const resultElement = document.querySelector('#result-image');
+                    resultElement.src = lastRecord.result_path;
+                    const confidenceScore = document.querySelector('#confidence-score');
+                    confidenceScore.textContent = lastRecord.confidence_score;
+                    const deskripsiElement = document.querySelector('#deskripsi');
+                    deskripsiElement.textContent = lastRecord.deskripsi;
+                }
+            } catch (error) {
+                console.error('Error: ', error);
+            }
+        });
+    </script>
+    <script src="/static/src/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
