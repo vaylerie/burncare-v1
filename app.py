@@ -53,5 +53,9 @@ def admin():
 def hasil():
      return render_template("user/result.html")
 
+@app.route("/profil")
+def profil():
+     return render_template("user/profile.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
