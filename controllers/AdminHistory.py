@@ -34,7 +34,8 @@ class AdminHistory(Resource):
                         "file_path": upload_identifikasi.file_path,
                         "derajat_klasifikasi": hasil_upload.derajat_klasifikasi,
                         "confidence_score": hasil_upload.confidence_score,
-                        "deskripsi": hasil_upload.deskripsi
+                        "deskripsi": hasil_upload.deskripsi,
+                        "result_path": hasil_upload.result_path
                     })
         if not history_data:
             return {"data": "No history found"}, 404
