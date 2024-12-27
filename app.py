@@ -45,10 +45,6 @@ def user():
 def history():
     return render_template("user/history.html")
 
-@app.route("/admin")
-def admin():
-    return render_template("admin/index.html")
-
 @app.route("/hasil")
 def hasil():
      return render_template("user/result.html")
@@ -56,6 +52,18 @@ def hasil():
 @app.route("/profil")
 def profil():
      return render_template("user/profile.html")
+
+@app.route("/admin")
+def admin():
+    return render_template("admin/index.html")
+
+@app.route("/admin-riwayat")
+def admin_history():
+     return render_template("admin/history.html")
+
+@app.route("/daftar-pengguna")
+def admin_user():
+     return render_template("admin/user.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
