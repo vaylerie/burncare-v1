@@ -91,20 +91,44 @@
       </div>
       <div class="mt-4 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
          <div class="grid grid-cols-3 gap-4 mb-4">
-            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  
-               </p>
+            <div class="flex justify-between items-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+               <div class="m-4 flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-800 rounded-lg dark:bg-blue-900">
+                  <svg class="w-8 h-8 text-blue-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6h8m-8 6h8m-8 6h8M4 16a2 2 0 1 1 3.321 1.5L4 20h5M4 5l2-1v6m-2 0h4"/>
+                  </svg>
+              </div>           
+               <div class="flex flex-col items-end m-4">
+                  <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Jumlah Identifikasi</p>
+                  <p class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
+                      <span id="history-count"></span>
+                  </p>
+              </div>
             </div>
-            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  
-               </p>
+            <div class="flex justify-between items-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+               <div class="m-4 flex items-center justify-center w-12 h-12 bg-yellow-100 text-yellow-800 rounded-lg dark:bg-yellow-900">
+                  <svg class="w-8 h-8 text-yellow-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                     <path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z" clip-rule="evenodd"/>
+                   </svg>                   
+              </div>           
+               <div class="flex flex-col items-end m-4">
+                  <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Jumlah Pengguna</p>
+                  <p class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
+                      <span id="user-count"></span>
+                  </p>
+              </div>
             </div>
-            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  
-               </p>
+            <div class="flex justify-between items-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+               <div class="m-4 flex items-center justify-center w-12 h-12 bg-green-100 text-green-800 rounded-lg dark:bg-green-900">
+                  <svg class="w-8 h-8 text-green-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                     <path fill-rule="evenodd" d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Zm2 0V2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9h5a2 2 0 0 0 2-2Zm.5 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm0 5c.47 0 .917-.092 1.326-.26l1.967 1.967a1 1 0 0 0 1.414-1.414l-1.817-1.818A3.5 3.5 0 1 0 11.5 17Z" clip-rule="evenodd"/>
+                   </svg>                   
+              </div>           
+               <div class="flex flex-col items-end m-4">
+                  <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Identifikasi Hari Ini</p>
+                  <p class="text-3xl font-extrabold text-gray-900 dark:text-gray-100">
+                      <span id="today-count"></span>
+                  </p>
+              </div>
             </div>
          </div>
       </div>

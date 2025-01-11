@@ -1,11 +1,93 @@
+let token = localStorage.getItem('token');
+if (!token) {
+    console.error('Token is undefined!')
+}
+
+//display data count
+document.addEventListener('DOMContentLoaded', async () => {
+    const apiUrl = '/api/admin/history';
+    const totalHistory = document.getElementById('history-count');
+    const todayHistory = document.getElementById('today-count');
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-API-TOKEN': token
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            const historyData = data.data;
+
+            if (historyData.length === 0) {
+                totalHistory.textContent = '0';
+                todayHistory.textContent = '0';
+                return;
+            }
+
+            // Total history count
+            totalHistory.textContent = `${historyData.length}`;
+
+            // Calculate today's history count
+            const today = new Date().toISOString().split('T')[0]; // Get today's date in 'YYYY-MM-DD' format
+            const todayCount = historyData.filter(record => {
+                const recordDate = new Date(record.waktu_upload).toISOString().split('T')[0];
+                return recordDate === today;
+            }).length;
+
+            // Display today's count
+            todayHistory.textContent = `${todayCount}`;
+        } else {
+            totalHistory.textContent = 'Error fetching data';
+            todayHistory.textContent = 'Error fetching data';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        totalHistory.textContent = 'Error fetching data';
+        todayHistory.textContent = 'Error fetching data';
+    }
+});
+
+//display user count
+document.addEventListener('DOMContentLoaded', async () => {
+    const apiUrl = '/api/admin/userdata';
+    const totalUser = document.getElementById('user-count');
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-API-TOKEN': token
+            }
+        });
+
+        if(response.ok) {
+            const data = await response.json();
+            console.log(data);
+            const historyData = data.data;
+
+            if (historyData.length === 0) {
+                totalUser.textContent = '0';
+                return;
+            } else {
+                totalUser.textContent = `${historyData.length}`;
+            }
+        } else {
+            totalUsery.textContent = 'Error fetching data';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        totalUser.textContent = 'Error fetching data';
+    }
+});
+
 // display users history
 document.addEventListener('DOMContentLoaded', async () => {
-    let token = localStorage.getItem('token'); // Contoh mengambil dari localStorage
-    if (!token) {
-        console.error('Token is undefined!');
-        // Redirect ke halaman login atau tampilkan pesan kesalahan
-    }
-    console.log('Token:', token);
     const apiUrl = '/api/admin/history';
     const tableBody = document.getElementById('user-history-table').querySelector('tbody');
 
@@ -51,12 +133,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // display users 
 document.addEventListener('DOMContentLoaded', async () => {
-    let token = localStorage.getItem('token'); // Contoh mengambil dari localStorage
-    if (!token) {
-        console.error('Token is undefined!');
-        // Redirect ke halaman login atau tampilkan pesan kesalahan
-    }
-    console.log('Token:', token);
     const apiUrl = '/api/admin/userdata';
     const tableBody = document.getElementById('user-table').querySelector('tbody');
 
@@ -104,7 +180,7 @@ async function logout() {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'X-API-TOKEN': localStorage.getItem('token')
+                'X-API-TOKEN': token
             },
         });
 
