@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
             
+            historyData.sort((a, b) => new Date(b.waktu_upload) - new Date(a.waktu_upload));
+
             historyData.forEach(record => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
