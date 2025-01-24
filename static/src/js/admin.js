@@ -3,6 +3,32 @@ if (!token) {
     console.error('Token is undefined!')
 }
 
+function getCurrentTimestamp() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Bulan dimulai dari 0
+    const date = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${date}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+}
+
+function updateTimestamp() {
+    const timestampElement = document.getElementById('realtime-timestamp');
+    if (timestampElement) {
+        timestampElement.textContent = getCurrentTimestamp();
+    }
+}
+
+// Perbarui timestamp setiap detik
+setInterval(updateTimestamp, 1000);
+
+// Tampilkan waktu saat halaman pertama kali dimuat
+updateTimestamp();
+
+
 //display data count
 document.addEventListener('DOMContentLoaded', async () => {
     const apiUrl = '/api/admin/history';
