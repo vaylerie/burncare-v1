@@ -131,6 +131,12 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         return;
     }
 
+    const maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
+    if (file.size > maxFileSize) {
+        alert('File size exceeds the 5MB limit. Please upload a smaller file.');
+        return;
+    }
+
     const formData = new FormData();
     formData.append('image', file); // Append the file to the FormData object
 
